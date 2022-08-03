@@ -8,7 +8,7 @@ class Dialog():
         self.image_dialog_where = pygame.image.load("Images/where.png")
         self.image_dialog_observe = pygame.image.load("Images/observe.png")
         self.image_dialog_general_room_greetings = pygame.image.load("Images/general_room_greetings.png")
-        self.rect = self.image_dialog_where .get_rect()
+        self.rect = self.image_dialog_where.get_rect()
         self.screen_rect = screenObject.screen.get_rect() #опять недурно сработал, молодец "я" из прошлого
         self.rect.centerx = self.screen_rect.centerx
         self.rect.bottom = self.screen_rect.bottom
