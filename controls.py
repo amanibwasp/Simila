@@ -1,7 +1,7 @@
 import sys
 import pygame
 
-# controls test comment for git
+# jush push
 
 def update_screen():
     for event in pygame.event.get():
