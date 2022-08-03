@@ -1,5 +1,7 @@
 import sys
 import pygame
+from random import randint
+from pygame.sprite import Sprite
 class Game():
     def __init__(self, screenObject):
         self.screenObject = screenObject
@@ -72,5 +74,21 @@ class Game():
         else:
             self.screenObject.screen.blit(self.unknown_standing, self.unknown_rect)
 
+
+class Arrow(pygame.sprite.Sprite):
+    def __init__(self, bg_rect, screenObject):
+        self.screenObject = screenObject
+        self.bg_rect = bg_rect
+        self.arrow_image = pygame.image.load('Images/game/arrow.png')
+        self.arrow_rect = self.arrow_image.get_rect()
+        self.arrow_rect.bottom = self.bg_rect.top
+        self.arrow_rect.centerx = randint(self.bg_rect.left + 20, self.bg_rect.right - 20)
+        self.speed = 4
+
+    def update(self):
+        self.arrow_rect.y += self.speed
+
+    def draw_arrow(self):
+        self.screenObject.screen.blit(self.arrow_image, self.arrow_rect)
 
 

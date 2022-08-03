@@ -19,9 +19,3 @@ class Simila():
             case 'neutral': self.screenObject.screen.blit(self.simila_neutral, self.simila_rect)
             case 'pleased': self.screenObject.screen.blit(self.simila_pleased, self.simila_rect)
             case 'worried': self.screenObject.screen.blit(self.simila_worried, self.simila_rect)
-
-
-
-
-
-
