@@ -1,7 +1,7 @@
 import sys
 import pygame
 
-# jush push
+
 
 def update_screen():
     for event in pygame.event.get():
