@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6b00fd83-7f44-4875-a58a-8fb1553d4477" name="Changes" comment="Убрал гитигнор с идеи">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dialog.py" beforeDir="false" afterPath="$PROJECT_DIR$/dialog.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dialog_with_simila.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/game.py" beforeDir="false" afterPath="$PROJECT_DIR$/game.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/generalMenu.py" beforeDir="false" afterPath="$PROJECT_DIR$/generalMenu.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mouse_control.py" beforeDir="false" afterPath="$PROJECT_DIR$/mouse_control.py" afterDir="false" />
-    </list>
+    <list default="true" id="6b00fd83-7f44-4875-a58a-8fb1553d4477" name="Changes" comment="Починил диалоги" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -92,7 +85,14 @@
       <option name="project" value="LOCAL" />
       <updated>1659643323914</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Починил диалоги">
+      <created>1659649827594</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1659649827594</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -108,6 +108,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Убрал гитигнор с идеи" />
-    <option name="LAST_COMMIT_MESSAGE" value="Убрал гитигнор с идеи" />
+    <MESSAGE value="Починил диалоги" />
+    <option name="LAST_COMMIT_MESSAGE" value="Починил диалоги" />
   </component>
 </project>
