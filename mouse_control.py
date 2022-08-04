@@ -1,7 +1,7 @@
 import pygame
 class Mouse_control():
 
-    def pos_and_click_for_dialog(self, dialog, action):
+    def pos_and_click_for_dialog(self, dialog, action = None):
         self.action = action
         self.dialog = dialog
         self.rect = self.dialog.rect
@@ -17,6 +17,8 @@ class Mouse_control():
                         self.action()
                     case 'general_room_greetings':
                         self.action()
+                    case 'simila_greetings':
+                        self.dialog.state = '' #не работает
 
 
 

@@ -11,7 +11,7 @@ class Simila_dialogs():
         self.run_dialog = False
         self.dialog_state = None
         self.option = ''
-        #получение диалоговых окон
+
 
         #диалог first_meeting
         self.first_meeting_image = pygame.image.load('Images\simila_dialogs\\first_meeting.png')
@@ -20,6 +20,7 @@ class Simila_dialogs():
         self.first_meeting_3_image = pygame.image.load('Images\simila_dialogs\\first_meeting_3.png')
         self.first_meeting_4_image = pygame.image.load('Images\simila_dialogs\\first_meeting_4.png')
         self.answers_image = pygame.image.load('Images\simila_dialogs\\answers.png')
+
 
         #rect для всех диалогов
         self.dialog_rect = self.first_meeting_image.get_rect()

@@ -96,12 +96,11 @@ class GeneralMenu():
             self.mouse_pos = pygame.mouse.get_pos()
             self.click = pygame.mouse.get_pressed()
 
-
             if self.simila.state == None:
                 self.screenObject.screen.blit(self.short_info_image, self.short_info_image_rect)
 
             # проверка Симилы на состояние и последующее размещение в зависимости от диалога
-            if self.simila_dialogs.run_dialog:
+            if self.simila_dialogs.run_dialog or self.dialog.dialog_phase != None:
                 self.simila.simila_rect.bottom = self.simila_dialogs.dialog_rect.top
                 self.simila.simila_rect.centerx = self.simila_dialogs.dialog_rect.centerx
             else:
@@ -115,8 +114,7 @@ class GeneralMenu():
                     self.screenObject.screen.blit(self.suspicious_prohibited_image, self.suspicious_image_rect)
                     if self.click[0]:
                         self.simila.state = 'happy'
-                        self.simila_dialogs.run_dialog = True
-                        self.simila_dialogs.dialog_state = 'first_meeting'
+                        self.dialog.dialog_phase = 'simila_greetings'
                 else:
                     self.screenObject.screen.blit(self.suspicious_image, self.suspicious_image_rect)
 
@@ -125,6 +123,8 @@ class GeneralMenu():
                 self.screenObject.screen.blit(self.back_active_image, self.back_rect)
                 if self.click[0]:
                     self.revive_menu()
+                    self.dialog.kill_dialog()
+                    self.simila.state = None
                     self.general_room_pk_close_running = False
             else:
                 self.screenObject.screen.blit(self.back_inactive_image, self.back_rect)
@@ -134,6 +134,8 @@ class GeneralMenu():
                 self.simila_dialogs.check_mouse_pos_for_options()
                 self.simila_dialogs.if_clicked()
                 self.simila_dialogs.run_simila_dialog()
+            self.mouse_control.pos_and_click_for_dialog(self.dialog)
+            self.dialog.update_dialog()
 
 
 
