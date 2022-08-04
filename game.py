@@ -1,7 +1,7 @@
 import sys
 import pygame
 from random import randint
-from pygame.sprite import Sprite
+from pygame.sprite import Group
 from pygame.sprite import Group
 class Game():
     def __init__(self, screenObject):
@@ -36,7 +36,7 @@ class Game():
                 arrow.draw_arrow()
             self.arrows.update()
             for arrow in self.arrows.copy():
-                if arrow.rect.bottom >= self.bg_rect.bottom - 30:
+                if arrow.rect.bottom >= self.bg_rect.bottom - 15:
                     self.arrows.remove(arrow)
             if pygame.sprite.spritecollideany(self.unknown, self.arrows):
                 self.game_running = False
