@@ -43,6 +43,7 @@ class GeneralMenu():
             self.mouse_control.pos_and_click_for_dialog(self.dialog, self.dialog.kill_dialog)
 
     def kill_menu(self):
+        self.dialog.dialog_phase = None
         self.general_menu_running = False
 
     def revive_menu(self):
@@ -134,8 +135,9 @@ class GeneralMenu():
                 self.simila_dialogs.check_mouse_pos_for_options()
                 self.simila_dialogs.if_clicked()
                 self.simila_dialogs.run_simila_dialog()
-            self.mouse_control.pos_and_click_for_dialog(self.dialog)
-            self.dialog.update_dialog()
+            if self.dialog.dialog_phase != None:
+                self.mouse_control.pos_and_click_for_dialog(self.dialog, None, self.simila_dialogs)
+                self.dialog.update_dialog()
 
 
 

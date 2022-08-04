@@ -24,6 +24,7 @@ class Dialog():
     def kill_dialog(self):
         self.dialog_phase = None
 
+
     def update_dialog(self):
         match self.dialog_phase:
             case 'where': self.screenObject.screen.blit(self.image_dialog_where, self.rect)

@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6b00fd83-7f44-4875-a58a-8fb1553d4477" name="Changes" comment="" />
+    <list default="true" id="6b00fd83-7f44-4875-a58a-8fb1553d4477" name="Changes" comment="Убрал гитигнор с идеи">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dialog.py" beforeDir="false" afterPath="$PROJECT_DIR$/dialog.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dialog_with_simila.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game.py" beforeDir="false" afterPath="$PROJECT_DIR$/game.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/generalMenu.py" beforeDir="false" afterPath="$PROJECT_DIR$/generalMenu.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mouse_control.py" beforeDir="false" afterPath="$PROJECT_DIR$/mouse_control.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,6 +20,9 @@
         <option value="Python Script" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -75,6 +85,29 @@
       <option name="presentableId" value="Default" />
       <updated>1658479779705</updated>
     </task>
+    <task id="LOCAL-00001" summary="Убрал гитигнор с идеи">
+      <created>1659643323914</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1659643323914</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Убрал гитигнор с идеи" />
+    <option name="LAST_COMMIT_MESSAGE" value="Убрал гитигнор с идеи" />
   </component>
 </project>

@@ -19,7 +19,7 @@ class Game():
         self.bg_game_over_rect.centery = self.screenObject.screen_rect.centery
         self.unknown = Unknown(self.bg_rect, self.screenObject)
         self.clock = pygame.time.Clock()
-        pygame.time.set_timer(pygame.USEREVENT, 1000)
+        pygame.time.set_timer(pygame.USEREVENT, 500)
         pygame.time.set_timer(123, 300) #123 - номер таймера на появление стрел
         self.arrows = Group()
         self.game_running = True
