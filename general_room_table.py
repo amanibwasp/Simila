@@ -15,10 +15,13 @@ class General_room_table():
     def table_inactive_output(self):
         self.screenObject.screen.blit(self.image_inactive, self.rect)
 
-    def option(self):
+    def option(self, action):
+        self.action = action
         self.click = pygame.mouse.get_pressed()
         self.mouse_pos = pygame.mouse.get_pos()
         if self.rect.x + 27 <= self.mouse_pos[0] <= self.rect.x + 27 + 113 and 96 + self.rect.y <= self.mouse_pos[1] <= 96 + 32 + self.rect.y:
             self.table_active_output()
+            if self.click[0]:
+                self.action()
         else:
             self.table_inactive_output()

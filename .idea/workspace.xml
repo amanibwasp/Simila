@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6b00fd83-7f44-4875-a58a-8fb1553d4477" name="Changes" comment="Починил диалоги" />
+    <list default="true" id="6b00fd83-7f44-4875-a58a-8fb1553d4477" name="Changes" comment="Начало решения проблемы с диалогами pk_close">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -39,11 +41,11 @@
       <recent name="C:\Users\Admin\PycharmProjects\Simila\Images\simila" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\user\PycharmProjects\Simila\Images" />
+      <recent name="C:\Users\user\PycharmProjects\Simila\Images\game" />
       <recent name="C:\Users\Admin\PycharmProjects\Simila\Images\game" />
       <recent name="C:\Users\Admin\PycharmProjects\Simila\Images\simila" />
       <recent name="C:\Users\user\PycharmProjects\Simila\Images\pk_close" />
-      <recent name="C:\Users\user\PycharmProjects\Simila\Images\pause_menu" />
-      <recent name="C:\Users\user\PycharmProjects\Simila\Images" />
     </key>
   </component>
   <component name="RunManager">
@@ -78,37 +80,6 @@
       <option name="presentableId" value="Default" />
       <updated>1658479779705</updated>
     </task>
-    <task id="LOCAL-00001" summary="Убрал гитигнор с идеи">
-      <created>1659643323914</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1659643323914</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Починил диалоги">
-      <created>1659649827594</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1659649827594</updated>
-    </task>
-    <option name="localTasksCounter" value="3" />
     <servers />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="Убрал гитигнор с идеи" />
-    <MESSAGE value="Починил диалоги" />
-    <option name="LAST_COMMIT_MESSAGE" value="Починил диалоги" />
   </component>
 </project>

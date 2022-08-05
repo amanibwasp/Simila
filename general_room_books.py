@@ -15,10 +15,13 @@ class General_room_books():
     def books_inactive_output(self):
         self.screenObject.screen.blit(self.image_inactive, self.rect)
 
-    def option(self):
+    def option(self, action):
+        self.action = action
         self.click = pygame.mouse.get_pressed()
         self.mouse_pos = pygame.mouse.get_pos()
         if self.rect.left + 331 <= self.mouse_pos[0] <= self.rect.left + 350 and self.rect.top + 120 <= self.mouse_pos[1] <= self.rect.top + 120 + 63:
             self.books_active_output()
+            if self.click[0]:
+                self.action()
         else:
             self.books_inactive_output()
