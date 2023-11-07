@@ -1,10 +1,11 @@
 import pygame
 
+
 class General_room_books():
     def __init__(self, screenObject):
         self.screenObject = screenObject
-        self.image_active = pygame.image.load("Images/books_active.png")
-        self.image_inactive = pygame.image.load("Images/books_inactive.png")
+        self.image_active = pygame.image.load("Images/game/books_active.png")
+        self.image_inactive = pygame.image.load("Images/game/books_inactive.png")
         self.rect = self.image_inactive.get_rect()
         self.rect.centery = self.screenObject.screen_rect[3] - 650
         self.rect.centerx = self.screenObject.screen_rect.centerx
@@ -19,7 +20,8 @@ class General_room_books():
         self.action = action
         self.click = pygame.mouse.get_pressed()
         self.mouse_pos = pygame.mouse.get_pos()
-        if self.rect.left + 331 <= self.mouse_pos[0] <= self.rect.left + 350 and self.rect.top + 120 <= self.mouse_pos[1] <= self.rect.top + 120 + 63:
+        if self.rect.left + 331 <= self.mouse_pos[0] <= self.rect.left + 350 and self.rect.top + 120 <= self.mouse_pos[
+            1] <= self.rect.top + 120 + 63:
             self.books_active_output()
             if self.click[0]:
                 self.action()

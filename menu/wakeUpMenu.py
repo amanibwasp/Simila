@@ -1,13 +1,13 @@
-import pygame
-import controls
-from dialog import Dialog
-from mouse_control import Mouse_control
-from generalMenu import GeneralMenu
+import common_settings.controls as controls
+from objects.dialog import Dialog
+from common_settings.mouse_control import Mouse_control
+from menu.generalMenu import GeneralMenu
+
 
 class WakeUpMenu:
     def __init__(self, screenObject):
         self.wake_up_menu_running = True
-        self.dialog = Dialog(screenObject) #получаем доступ ко всем диалоговым окнам
+        self.dialog = Dialog(screenObject)  # получаем доступ ко всем диалоговым окнам
         self.dialog.dialog_phase = 'where'
         self.screenObject = screenObject
         self.mouse_control = Mouse_control()
@@ -26,5 +26,3 @@ class WakeUpMenu:
     def general_menu_start(self):
         gm = GeneralMenu(self.screenObject)
         self.kill_menu()
-
-

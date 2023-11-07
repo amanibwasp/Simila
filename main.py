@@ -1,6 +1,6 @@
 import pygame
-from screen import Screen
-from startMenu import StartMenu
+from common_settings.screen import Screen
+from menu.startMenu import StartMenu
 
 class Main():
     pygame.init()

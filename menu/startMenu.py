@@ -1,13 +1,15 @@
 import pygame
-import controls
-from startBtn import StartBtn
-from wakeUpMenu import WakeUpMenu
+import common_settings.controls as controls
+from objects.startBtn import StartBtn
+from menu.wakeUpMenu import  WakeUpMenu
+
+
 class StartMenu():
     def __init__(self, screenObject):
         self.start_menu_running = True
         self.screenObject = screenObject
         self.startBtn = StartBtn(screenObject, self.wake_up_menu_start)
-        self.logo_image = pygame.image.load('Images/Logo.png')
+        self.logo_image = pygame.image.load('Images/game/logo.png')
         self.logo_image_rect = self.logo_image.get_rect()
         self.logo_image_rect.top = self.screenObject.screen_rect.top + 50
         self.logo_image_rect.centerx = self.screenObject.screen_rect.centerx
@@ -27,4 +29,3 @@ class StartMenu():
         pygame.time.delay(300)
         wum = WakeUpMenu(self.screenObject)
         self.kill_menu()
-

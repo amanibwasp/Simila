@@ -1,9 +1,10 @@
 import pygame
 
+
 class General_room_table():
     def __init__(self, screenObject):
-        self.image_active = pygame.image.load("Images/table_active.png")
-        self.image_inactive = pygame.image.load("Images/table_inactive.png")
+        self.image_active = pygame.image.load("Images/game/table_active.png")
+        self.image_inactive = pygame.image.load("Images/game/table_inactive.png")
         self.rect = self.image_inactive.get_rect()
         self.screenObject = screenObject
         self.rect.centerx = self.screenObject.screen_rect[2] // 4
@@ -19,7 +20,8 @@ class General_room_table():
         self.action = action
         self.click = pygame.mouse.get_pressed()
         self.mouse_pos = pygame.mouse.get_pos()
-        if self.rect.x + 27 <= self.mouse_pos[0] <= self.rect.x + 27 + 113 and 96 + self.rect.y <= self.mouse_pos[1] <= 96 + 32 + self.rect.y:
+        if self.rect.x + 27 <= self.mouse_pos[0] <= self.rect.x + 27 + 113 and 96 + self.rect.y <= self.mouse_pos[
+            1] <= 96 + 32 + self.rect.y:
             self.table_active_output()
             if self.click[0]:
                 self.action()

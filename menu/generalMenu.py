@@ -1,15 +1,16 @@
-
 import pygame
-import controls
-from dialog import Dialog
-from simila import Simila
-from simila_dialogs import Simila_dialogs
-from mouse_control import Mouse_control
-from general_room_floor import General_room_floor
-from general_room_door import General_room_door
-from general_room_table import General_room_table
-from general_room_pk import General_room_pk
-from general_room_books import General_room_books
+import common_settings.controls as controls
+from objects.dialog import Dialog
+from simila.simila import Simila
+from simila.simila_dialogs import Simila_dialogs
+from common_settings.mouse_control import Mouse_control
+from objects.general_room_floor import General_room_floor
+from objects.general_room_door import General_room_door
+from objects.general_room_table import General_room_table
+from objects.general_room_pk import General_room_pk
+from objects.general_room_books import General_room_books
+
+
 class GeneralMenu():
     def __init__(self, screenObject):
         pygame.time.delay(300)
@@ -27,14 +28,14 @@ class GeneralMenu():
         self.general_menu_running = True
         self.general_room_pk_close_running = False
 
-        #настройки для кнопки "назад"
-        self.back_inactive_image = pygame.image.load('Images/back_inactive.png')
-        self.back_active_image = pygame.image.load('Images/back_active.png')
+        # настройки для кнопки "назад"
+        self.back_inactive_image = pygame.image.load('Images/game/back_inactive.png')
+        self.back_active_image = pygame.image.load('Images/game/back_active.png')
         self.back_rect = self.back_active_image.get_rect()
         self.back_rect.right = self.screenObject.screen_rect.right
         self.back_rect.bottom = self.screenObject.screen_rect.bottom
 
-        self.bg_color = (186,144,69)
+        self.bg_color = (186, 144, 69)
         self.run_window()
 
     def run_window(self):
@@ -58,24 +59,26 @@ class GeneralMenu():
 
     def general_room_door_close(self):
         self.kill_menu()
-        self.general_room_door_close_image = pygame.image.load('Images/closed_door.png')
+        self.general_room_door_close_image = pygame.image.load('Images/game/closed_door.png')
         self.rect_general_room_door_close_image = self.general_room_door_close_image.get_rect()
         self.rect_general_room_door_close_image.centerx = self.screenObject.screen_rect.centerx
         self.rect_general_room_door_close_image.centery = self.screenObject.screen_rect.centery
         self.general_room_door_close_running = True
         while self.general_room_door_close_running:
             controls.update_screen()
-            self.screenObject.screen.fill((161,161,161))
+            self.screenObject.screen.fill((161, 161, 161))
             self.mouse_pos = pygame.mouse.get_pos()
             self.click = pygame.mouse.get_pressed()
             self.screenObject.screen.blit(self.general_room_door_close_image, self.rect_general_room_door_close_image)
-            if self.back_rect.left <= self.mouse_pos[0] <= self.back_rect.right and self.back_rect.top <= self.mouse_pos[1] <= self.back_rect.bottom:
+            if self.back_rect.left <= self.mouse_pos[0] <= self.back_rect.right and self.back_rect.top <= \
+                    self.mouse_pos[1] <= self.back_rect.bottom:
                 self.screenObject.screen.blit(self.back_active_image, self.back_rect)
                 if self.click[0]:
                     self.revive_menu()
                     self.general_room_door_close_running = False
             else:
                 self.screenObject.screen.blit(self.back_inactive_image, self.back_rect)
+
     def general_room_pk_close(self):
         self.kill_menu()
         self.short_info_image = pygame.image.load('Images/pk_close/short_info.png')
@@ -84,13 +87,13 @@ class GeneralMenu():
         self.short_info_image_rect = self.short_info_image.get_rect()
         self.suspicious_image_rect = self.suspicious_image.get_rect()
         self.general_room_pk_close_running = True
-        self.short_info_image_rect.right = self.screenObject.screen_rect.right-50
+        self.short_info_image_rect.right = self.screenObject.screen_rect.right - 50
         self.short_info_image_rect.top = self.screenObject.screen_rect.top
         self.suspicious_image_rect.centerx = self.screenObject.screen_rect.centerx
         self.suspicious_image_rect.centery = self.screenObject.screen_rect.centery
         while self.general_room_pk_close_running:
             controls.update_screen()
-            self.screenObject.screen.fill((119,215,245))
+            self.screenObject.screen.fill((119, 215, 245))
             self.mouse_pos = pygame.mouse.get_pos()
             self.click = pygame.mouse.get_pressed()
 
@@ -106,9 +109,11 @@ class GeneralMenu():
                 self.simila.simila_rect.centerx = self.screenObject.screen_rect.centerx
             self.simila.output_simila()
 
-            #ПОДОЗРИТЕЛЬНЫЙ ФАЙЛ
+            # ПОДОЗРИТЕЛЬНЫЙ ФАЙЛ
             if self.simila.state == None:
-                if self.suspicious_image_rect.left <= self.mouse_pos[0] <= self.suspicious_image_rect.right and self.suspicious_image_rect.top <= self.mouse_pos[1] <= self.suspicious_image_rect.bottom:
+                if self.suspicious_image_rect.left <= self.mouse_pos[
+                    0] <= self.suspicious_image_rect.right and self.suspicious_image_rect.top <= self.mouse_pos[
+                    1] <= self.suspicious_image_rect.bottom:
                     self.screenObject.screen.blit(self.suspicious_prohibited_image, self.suspicious_image_rect)
                     if self.click[0]:
                         self.simila.state = 'happy'
@@ -116,8 +121,9 @@ class GeneralMenu():
                 else:
                     self.screenObject.screen.blit(self.suspicious_image, self.suspicious_image_rect)
 
-            #КНОПКА НАЗАД
-            if self.back_rect.left <= self.mouse_pos[0] <= self.back_rect.right and self.back_rect.top <= self.mouse_pos[1] <= self.back_rect.bottom:
+            # КНОПКА НАЗАД
+            if self.back_rect.left <= self.mouse_pos[0] <= self.back_rect.right and self.back_rect.top <= \
+                    self.mouse_pos[1] <= self.back_rect.bottom:
                 self.screenObject.screen.blit(self.back_active_image, self.back_rect)
                 if self.click[0]:
                     self.revive_menu()
@@ -127,7 +133,7 @@ class GeneralMenu():
             else:
                 self.screenObject.screen.blit(self.back_inactive_image, self.back_rect)
 
-            #ПРОКРУЧИВАНИЕ ДИАЛОГОВ С СИМИЛОЙ:
+            # ПРОКРУЧИВАНИЕ ДИАЛОГОВ С СИМИЛОЙ:
             if self.simila_dialogs.run_dialog:
                 self.simila_dialogs.check_mouse_pos_for_options()
                 self.simila_dialogs.if_clicked()
@@ -137,43 +143,45 @@ class GeneralMenu():
                 self.dialog.update_dialog()
 
     def general_room_books_close(self):
-            self.kill_menu()
-            self.diary_image = pygame.image.load('Images/diary.png')
-            self.diary_rect = self.diary_image.get_rect()
-            self.diary_rect.centerx = self.screenObject.screen_rect.centerx
-            self.diary_rect.centery = self.screenObject.screen_rect.centery
-            self.general_room_books_close_running = True
-            while self.general_room_books_close_running:
-                controls.update_screen()
-                self.screenObject.screen.fill((0,0,0))
-                self.mouse_pos = pygame.mouse.get_pos()
-                self.click = pygame.mouse.get_pressed()
-                self.screenObject.screen.blit(self.diary_image, self.diary_rect)
-                if self.back_rect.left <= self.mouse_pos[0] <= self.back_rect.right and self.back_rect.top <= self.mouse_pos[1] <= self.back_rect.bottom:
-                    self.screenObject.screen.blit(self.back_active_image, self.back_rect)
-                    if self.click[0]:
-                        self.revive_menu()
-                        self.general_room_books_close_running = False
-                else:
-                    self.screenObject.screen.blit(self.back_inactive_image, self.back_rect)
-    def general_room_table_close(self):
-            self.kill_menu()
-            self.wanted_image = pygame.image.load('Images/wanted_in_table.png')
-            self.wanted_rect = self.wanted_image.get_rect()
-            self.wanted_rect.centerx = self.screenObject.screen_rect.centerx
-            self.wanted_rect.centery = self.screenObject.screen_rect.centery
-            self.general_room_table_close_running = True
-            while self.general_room_table_close_running:
-                controls.update_screen()
-                self.screenObject.screen.fill((0,0,0))
-                self.mouse_pos = pygame.mouse.get_pos()
-                self.click = pygame.mouse.get_pressed()
-                self.screenObject.screen.blit(self.wanted_image, self.wanted_rect)
-                if self.back_rect.left <= self.mouse_pos[0] <= self.back_rect.right and self.back_rect.top <= self.mouse_pos[1] <= self.back_rect.bottom:
-                    self.screenObject.screen.blit(self.back_active_image, self.back_rect)
-                    if self.click[0]:
-                        self.revive_menu()
-                        self.general_room_table_close_running = False
-                else:
-                    self.screenObject.screen.blit(self.back_inactive_image, self.back_rect)
+        self.kill_menu()
+        self.diary_image = pygame.image.load('Images/game/diary.png')
+        self.diary_rect = self.diary_image.get_rect()
+        self.diary_rect.centerx = self.screenObject.screen_rect.centerx
+        self.diary_rect.centery = self.screenObject.screen_rect.centery
+        self.general_room_books_close_running = True
+        while self.general_room_books_close_running:
+            controls.update_screen()
+            self.screenObject.screen.fill((0, 0, 0))
+            self.mouse_pos = pygame.mouse.get_pos()
+            self.click = pygame.mouse.get_pressed()
+            self.screenObject.screen.blit(self.diary_image, self.diary_rect)
+            if self.back_rect.left <= self.mouse_pos[0] <= self.back_rect.right and self.back_rect.top <= \
+                    self.mouse_pos[1] <= self.back_rect.bottom:
+                self.screenObject.screen.blit(self.back_active_image, self.back_rect)
+                if self.click[0]:
+                    self.revive_menu()
+                    self.general_room_books_close_running = False
+            else:
+                self.screenObject.screen.blit(self.back_inactive_image, self.back_rect)
 
+    def general_room_table_close(self):
+        self.kill_menu()
+        self.wanted_image = pygame.image.load('Images/game/wanted_in_table.png')
+        self.wanted_rect = self.wanted_image.get_rect()
+        self.wanted_rect.centerx = self.screenObject.screen_rect.centerx
+        self.wanted_rect.centery = self.screenObject.screen_rect.centery
+        self.general_room_table_close_running = True
+        while self.general_room_table_close_running:
+            controls.update_screen()
+            self.screenObject.screen.fill((0, 0, 0))
+            self.mouse_pos = pygame.mouse.get_pos()
+            self.click = pygame.mouse.get_pressed()
+            self.screenObject.screen.blit(self.wanted_image, self.wanted_rect)
+            if self.back_rect.left <= self.mouse_pos[0] <= self.back_rect.right and self.back_rect.top <= \
+                    self.mouse_pos[1] <= self.back_rect.bottom:
+                self.screenObject.screen.blit(self.back_active_image, self.back_rect)
+                if self.click[0]:
+                    self.revive_menu()
+                    self.general_room_table_close_running = False
+            else:
+                self.screenObject.screen.blit(self.back_inactive_image, self.back_rect)

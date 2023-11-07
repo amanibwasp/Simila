@@ -1,4 +1,6 @@
 import pygame
+
+
 class PauseMenu():
     def __init__(self, screenObject):
         self.screenObject = screenObject
@@ -7,7 +9,7 @@ class PauseMenu():
         self.resume_button_inactive_image = pygame.image.load('Images/pause_menu/resume_button_inactive.png')
         self.exit_button_active_image = pygame.image.load('Images/pause_menu/exit_button_active.png')
         self.exit_button_active_image = pygame.image.load('Images/pause_menu/exit_button_inactive.png')
-        self.logo_image = pygame.image.load('Images/Logo.png')
+        self.logo_image = pygame.image.load('Images/game/logo.png')
         self.paused = False
 
         self.background_image_rect = self.background_image.get_rect()
@@ -30,7 +32,3 @@ class PauseMenu():
         print('got paused')
         while self.paused:
             print('again')
-           #self.screenObject.screen.fill((0,0,0)) #ЗАЛИВКА ВЫПОЛНЯЕТСЯ ПОСЛЕДНЕЙ, ТАК ЧТО ЧЕК НА ПАУЗУ В ВАЙЛАХ В ПОСЛЕДНЮЮ ОЧЕРЕДЬ
-           # self.screenObject.screen.blit(self.background_image, self.background_image_rect)
-
-
